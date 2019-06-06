@@ -34,6 +34,16 @@ class TipCalculator extends React.Component {
       }
     
       render() {
+          let tipNum = (parseFloat(this.state.value) * (parseInt(this.state.tip)/100))/parseInt(this.state.people) + 0.00;
+          let tipTotal;
+          if(this.state.people > 1)
+          {
+              tipTotal = parseFloat(tipNum).toFixed(2) + ' per person'
+          }
+          else 
+          {
+              tipTotal = parseFloat(tipNum).toFixed(2);
+          }
         return (
          <div id="div1">
             <div className="div2">
@@ -62,7 +72,11 @@ class TipCalculator extends React.Component {
             </div>
 
             <div className='div3'>
-                <p>edbhjk</p>
+                <h4>Tip</h4>
+                <p>${tipTotal}</p>
+
+                <h4>Total</h4>
+
             </div>
           </div>
         );

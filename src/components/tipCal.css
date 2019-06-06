@@ -5,11 +5,11 @@
 .div2 {
     display: inline-block;
     vertical-align: top;
-    width: 40%;
+    width: 50%;
 }
 
 .div3 {
     display: inline-block;
     overflow: hidden;
-    width: 60%;
+    width: 50%;
 }

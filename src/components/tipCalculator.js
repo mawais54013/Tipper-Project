@@ -34,6 +34,8 @@ class TipCalculator extends React.Component {
       }
     
       render() {
+        let warning = '';
+
           let tipNum = (parseFloat(this.state.value) * (parseInt(this.state.tip)/100))/parseInt(this.state.people) + 0.00;
           let tipTotal;
           if(this.state.people > 1)
@@ -51,11 +53,17 @@ class TipCalculator extends React.Component {
 
           if(this.state.people > 1)
           {
-            fullTotal = parseFloat(totalNum).toFixed(2) + ' per person';
+            fullTotal = '$' + parseFloat(totalNum).toFixed(2) + ' per person';
           }
           else 
           {
-            fullTotal = parseFloat(totalNum).toFixed(2);
+            fullTotal = '$' + parseFloat(totalNum).toFixed(2);
+          }
+
+          if(isNaN(totalNum))
+          {
+              warning = "Input must only be numbers"
+              console.log(true);
           }
         return (
          <div id="div1">
@@ -67,11 +75,14 @@ class TipCalculator extends React.Component {
                     <input type="number" value={this.state.value} onChange={this.handleChange} />
                     </label>
                     <br/>
+                    <br />
                     <label>
                         Tip %:
                         <br />
                         <input type="text" value={this.state.tip} onChange={this.handleTipChange} />
                     </label>
+                    <br/>
+                    <span>{warning}</span>
                     <br />
                     <br/>
                     <label>
@@ -80,16 +91,15 @@ class TipCalculator extends React.Component {
                         <input type="number" value={this.state.people} onChange={this.handlePeopleChange} />
                     </label>
                     <br />
-                    {/* <input type="submit" value="Submit" /> */}
                 </form>
             </div>
 
             <div className='div3'>
                 <h4>Tip</h4>
-                <p>${tipTotal}</p>
+                <p>{'$' + tipTotal}</p>
 
                 <h4>Total</h4>
-                <p>${fullTotal}</p>
+                <p>{fullTotal}</p>
             </div>
           </div>
         );

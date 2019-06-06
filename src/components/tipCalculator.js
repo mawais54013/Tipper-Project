@@ -13,7 +13,6 @@ class TipCalculator extends React.Component {
         this.handleChange = this.handleChange.bind(this);
         this.handleTipChange = this.handleTipChange.bind(this);
         this.handlePeopleChange = this.handlePeopleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
       }
     
       handleChange(event) {
@@ -28,43 +27,36 @@ class TipCalculator extends React.Component {
         this.setState({people: event.target.value});
       }
     
-      handleSubmit(event) {
-        console.log(this.state.tip)
-        event.preventDefault();
-      }
-    
       render() {
-        let warning = '';
 
           let tipNum = (parseFloat(this.state.value) * (parseInt(this.state.tip)/100))/parseInt(this.state.people) + 0.00;
           let tipTotal;
-          if(this.state.people > 1)
-          {
-              tipTotal = parseFloat(tipNum).toFixed(2) + ' per person'
-          }
-          else 
-          {
-              tipTotal = parseFloat(tipNum).toFixed(2);
-          }
+          tipTotal = parseFloat(tipNum).toFixed(2);
 
           let totalNum = (parseFloat(this.state.value) + (parseFloat(tipTotal) * parseInt(this.state.people)))/parseInt(this.state.people);
           console.log(totalNum)
           let fullTotal;
-
-          if(this.state.people > 1)
-          {
-            fullTotal = '$' + parseFloat(totalNum).toFixed(2) + ' per person';
-          }
-          else 
-          {
-            fullTotal = '$' + parseFloat(totalNum).toFixed(2);
-          }
-
+          
           if(isNaN(totalNum))
           {
-              warning = "Input must only be numbers"
-              console.log(true);
+              tipTotal = 'All fields must be numbers';
+              fullTotal = 'All fields must be numbers';
           }
+          else
+          {
+            if(this.state.people > 1)
+            {
+                fullTotal = '$' + parseFloat(totalNum).toFixed(2) + ' per person';
+                tipTotal = '$' + parseFloat(tipNum).toFixed(2) + ' per person'
+
+            }
+            else 
+            {
+                fullTotal = '$' + parseFloat(totalNum).toFixed(2);
+                tipTotal = '$' + parseFloat(tipNum).toFixed(2);
+            }
+          }
+
         return (
          <div id="div1">
             <div className="div2">
@@ -82,7 +74,7 @@ class TipCalculator extends React.Component {
                         <input type="text" value={this.state.tip} onChange={this.handleTipChange} />
                     </label>
                     <br/>
-                    <span>{warning}</span>
+                    {/* <span>{warning}</span> */}
                     <br />
                     <br/>
                     <label>
@@ -96,7 +88,7 @@ class TipCalculator extends React.Component {
 
             <div className='div3'>
                 <h4>Tip</h4>
-                <p>{'$' + tipTotal}</p>
+                <p>{tipTotal}</p>
 
                 <h4>Total</h4>
                 <p>{fullTotal}</p>

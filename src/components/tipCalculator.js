@@ -44,6 +44,19 @@ class TipCalculator extends React.Component {
           {
               tipTotal = parseFloat(tipNum).toFixed(2);
           }
+
+          let totalNum = (parseFloat(this.state.value) + (parseFloat(tipTotal) * parseInt(this.state.people)))/parseInt(this.state.people);
+          console.log(totalNum)
+          let fullTotal;
+
+          if(this.state.people > 1)
+          {
+            fullTotal = parseFloat(totalNum).toFixed(2) + ' per person';
+          }
+          else 
+          {
+            fullTotal = parseFloat(totalNum).toFixed(2);
+          }
         return (
          <div id="div1">
             <div className="div2">
@@ -67,7 +80,7 @@ class TipCalculator extends React.Component {
                         <input type="number" value={this.state.people} onChange={this.handlePeopleChange} />
                     </label>
                     <br />
-                    <input type="submit" value="Submit" />
+                    {/* <input type="submit" value="Submit" /> */}
                 </form>
             </div>
 
@@ -76,7 +89,7 @@ class TipCalculator extends React.Component {
                 <p>${tipTotal}</p>
 
                 <h4>Total</h4>
-
+                <p>${fullTotal}</p>
             </div>
           </div>
         );

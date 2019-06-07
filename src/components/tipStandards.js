@@ -1,8 +1,18 @@
 import React from 'react';
+import './tipCal.css';
 
 const tipStandards = () => {
     return (
-        <h1>div 2 </h1>
+        <div id="div1">
+            <div className="div3">
+            <h2>Tipping Guide</h2>
+            <p>Good Starting Point: 15%</p>
+            <p>Locations:</p>
+            <p>Sit Down Restaurants: 15% - 20%</p>
+            <p>Buffets: 10%</p>
+            <p>Bars: 15% - 15% per drink</p>
+            </div>
+        </div>
     )
 }
 

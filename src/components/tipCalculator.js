@@ -60,6 +60,7 @@ class TipCalculator extends React.Component {
         return (
          <div id="div1">
             <div className="div2">
+                <br/>
                 <form onSubmit={this.handleSubmit}>
                     <label>
                     Bill:

@@ -11,13 +11,13 @@ function App() {
             Welcome To Tipper!
         </p>
       </header>
-
-      <div className="ib">
-          <TipCalculator />
-      </div>
-
-      <div className="ib">
-          <TipStandards />
+      <div className="container">
+        <div className="left">
+            <TipCalculator />
+        </div>
+        <div className="right">
+            <TipStandards />
+        </div>
       </div>
     </div>
   );

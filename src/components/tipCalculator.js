@@ -87,7 +87,7 @@ class TipCalculator extends React.Component {
                 </form>
             </div>
 
-            <div className='div3'>
+            <div className='div3' id="divFix">
                 <h2>Tip</h2>
                 <p id="pTag">{tipTotal}</p>
 

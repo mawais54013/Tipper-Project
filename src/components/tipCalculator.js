@@ -37,10 +37,10 @@ class TipCalculator extends React.Component {
           console.log(totalNum)
           let fullTotal;
           
-          if(isNaN(totalNum))
+          if(isNaN(totalNum) || totalNum < 0)
           {
-              tipTotal = 'All fields must be numbers';
-              fullTotal = 'All fields must be numbers';
+              tipTotal = 'All fields must be positive numbers';
+              fullTotal = 'All fields must be positive numbers';
           }
           else
           {
@@ -64,7 +64,7 @@ class TipCalculator extends React.Component {
                 <br/>
                 <form onSubmit={this.handleSubmit}>
                     <label>
-                    Bill:
+                    Bill Amount:
                     <br/>
                     <input type="number" value={this.state.value} onChange={this.handleChange} />
                     </label>
@@ -88,11 +88,11 @@ class TipCalculator extends React.Component {
             </div>
 
             <div className='div3'>
-                <h4>Tip</h4>
-                <p>{tipTotal}</p>
+                <h2>Tip</h2>
+                <p id="pTag">{tipTotal}</p>
 
-                <h4>Total</h4>
-                <p>{fullTotal}</p>
+                <h2>Total</h2>
+                <p id="pTag">{fullTotal}</p>
             </div>
           </div>
         );

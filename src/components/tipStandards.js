@@ -4,7 +4,7 @@ import './tipCal.css';
 const tipStandards = () => {
     return (
         <div id="div1">
-            <div className="div3">
+            <div >
             <h2>Tipping Guide</h2>
             <p>Good Starting Point: 15%</p>
             <p>Locations:</p>

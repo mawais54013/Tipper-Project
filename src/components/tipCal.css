@@ -1,15 +1,41 @@
 #div1 {
     width: 100%;
+    border-color: red #32a1ce;
 }
 
 .div2 {
     display: inline-block;
+    margin-right: 10px;
     vertical-align: top;
-    width: 30%;
+    width: 40%;
 }
 
 .div3 {
     display: inline-block;
     overflow: hidden;
-    width: 70%;
+    width: 50%;
+}
+
+label {
+    width:60px;
+    font-size:20px;
+    line-height:24px;
+    font-weight:bold;
+
+}
+input {
+    width:200px;
+    height: 40px;
+    margin-bottom:5px;
+    font-size: 20px;
+    line-height:18px;
+    padding:2px 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border:1px solid #CCC;
+}
+
+#pTag {
+    font-size: 20px;
 }

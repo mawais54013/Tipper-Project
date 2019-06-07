@@ -75,7 +75,6 @@ class TipCalculator extends React.Component {
                         <input type="text" value={this.state.tip} onChange={this.handleTipChange} />
                     </label>
                     <br/>
-                    {/* <span>{warning}</span> */}
                     <br />
                     <br/>
                     <label>

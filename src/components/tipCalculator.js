@@ -29,8 +29,7 @@ class TipCalculator extends React.Component {
 
     render() {
         let tipNum = (parseFloat(this.state.value) * (parseInt(this.state.tip) / 100)) / parseInt(this.state.people) + 0.00;
-        let tipTotal;
-        tipTotal = parseFloat(tipNum).toFixed(2);
+        let tipTotal = parseFloat(tipNum).toFixed(2);
 
         let totalNum = (parseFloat(this.state.value) + (parseFloat(tipTotal) * parseInt(this.state.people))) / parseInt(this.state.people);
         let fullTotal;

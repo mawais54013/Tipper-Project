@@ -10,7 +10,7 @@ const tipStandards = () => {
                 <h2>Locations:</h2>
                 <p id="pTag">Sit Down Restaurants: 15% - 20%</p>
                 <p id="pTag">Buffets: 10%</p>
-                <p id="pTag">Bars: 15% - 15% per drink</p>
+                <p id="pTag">Bars: 15% - 20% per drink</p>
             </div>
         </div>
     )

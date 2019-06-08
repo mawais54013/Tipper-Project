@@ -19,6 +19,7 @@ function App() {
             <TipStandards />
         </div>
       </div>
+      <footer/>
     </div>
   );
 }

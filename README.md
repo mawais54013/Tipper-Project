@@ -1,68 +1,50 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Tipper-App
 
-## Available Scripts
+This is a very simple tip calculator application built with React, Javascript, and Heroku. Having a difficult time figuring out how much to tip or how much to split the bill, just use this app to make it easier on yourself. 
 
-In the project directory, you can run:
+![index](src/images/Screen1.png)
 
-### `npm start`
+# Getting Started 
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Site Link: [Tipper-App](https://tipper-app.herokuapp.com/)
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+Just enter the total bill, tip percentage, and the number of people that bill should be split with and the total will be revealed. 
 
-### `npm test`
+Note that the app will only calculate the total for positive numbers, so users will get a error message if user types a letter or negative numbers. 
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Prerequisites
 
-### `npm run build`
+Your can access the site from any interest browser including [Google Chrome](https://www.google.com/chrome/), [Firefox](https://www.mozilla.org/en-US/firefox/new/), or [Safari](https://www.apple.com/safari/). 
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Deployment 
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+This site is deployed through [heroku](https://shout-it-out.herokuapp.com/). 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Built With 
 
-### `npm run eject`
+- React js
+- Javascript
+- CSS
+- Heroku
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+# Code Sample
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+let tipNum = (parseFloat(this.state.value) * (parseInt(this.state.tip) / 100)) / parseInt(this.state.people) + 0.00;
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+let tipTotal = parseFloat(tipNum).toFixed(2);
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+let totalNum = (parseFloat(this.state.value) + (parseFloat(tipTotal) * parseInt(this.state.people))) / parseInt(this.state.people);
 
-## Learn More
+let fullTotal;
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+if (isNaN(totalNum) || totalNum < 0) {
+    tipTotal = 'All fields must be positive numbers';
+    fullTotal = 'All fields must be positive numbers';
+}
+```
+The code above shows the tip is calculated and then the tip total is used to calculated the total among the people into full total. After we check to see if totalNum is either a negative or is not a number and if that is the case it returns a error message. 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Author
 
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Muhammad - https://github.com/mawais54013

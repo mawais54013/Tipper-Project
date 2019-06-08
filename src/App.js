@@ -4,6 +4,7 @@ import TipStandards from './components/tipStandards';
 import './App.css';
 
 function App() {
+  // TipCalculator and TipStandards for easier seperation 
   return (
     <div className="App">
       <header className="App-header">

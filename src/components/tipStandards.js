@@ -1,6 +1,6 @@
 import React from 'react';
 import './tipCal.css';
-
+// recommended guide to tipping
 const tipStandards = () => {
     return (
         <div id="div1">

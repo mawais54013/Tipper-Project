@@ -1,3 +1,5 @@
+
+Added Datadog to this project
 # Tipper-App
 
 This is a very simple tip calculator application built with React, Javascript, and Heroku. Having a difficult time figuring out how much to tip or how much to split the bill, just use this app to make it easier on yourself. 
